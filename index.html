@@ -14,6 +14,9 @@
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
       }
+      body {
+        background-color: rgba(0, 118, 187, 0.9);
+      }
       header {
         position: absolute;
         top: 0;
@@ -367,11 +370,15 @@
       const menuToggle = document.querySelector(".toggle");
       const showcase = document.querySelector(".showcase");
       const overlay = document.querySelector(".overlay");
-
+      const socials =  document.querySelector(".list-heading");
+      
       menuToggle.addEventListener("click", () => {
         menuToggle.classList.toggle("active");
         showcase.classList.toggle("active");
         overlay.classList.toggle("active");
+        socials.addEventListener("click", () => {
+        menuToggle.click();
+      });
       });
     </script>
   </body>
