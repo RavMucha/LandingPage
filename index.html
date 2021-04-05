@@ -15,7 +15,7 @@
         font-family: "Poppins", sans-serif;
       }
       body {
-        background-color:#0099ff
+        background-color: #0099ff;
       }
       header {
         position: absolute;
@@ -37,6 +37,11 @@
         color: #ffc8a3;
         text-transform: uppercase;
         cursor: pointer;
+        filter: hue-rotate(0deg);
+        transition: all 2s ease;
+      }
+      header .logo:hover span {
+        filter: hue-rotate(360deg);
       }
       .toggle {
         position: relative;
@@ -206,8 +211,14 @@
         font-size: 55px;
         font-weight: 900;
         color: #0089e4;
-        cursor:pointer;
+        transition: filter 0.3s linear;
+        cursor: pointer;
       }
+
+      .menu .list-heading:hover {
+        filter: drop-shadow(5px 5px 5px #005791) invert(15%);
+      }
+
       .menu .list-footer {
         writing-mode: vertical-rl;
         text-orientation: mixed;
@@ -217,11 +228,13 @@
         font-size: 55px;
         font-weight: 900;
         color: #0089e4;
+        user-select: none;
       }
       .menu ul li a {
         text-decoration: none;
         font-size: 24px;
         line-height: 1.5em;
+        transition: filter 0.3s linear;
         color: #fff;
       }
       .menu ul li a:hover {
@@ -371,15 +384,15 @@
       const menuToggle = document.querySelector(".toggle");
       const showcase = document.querySelector(".showcase");
       const overlay = document.querySelector(".overlay");
-      const socials =  document.querySelector(".list-heading");
-      
+      const socials = document.querySelector(".list-heading");
+
       menuToggle.addEventListener("click", () => {
         menuToggle.classList.toggle("active");
         showcase.classList.toggle("active");
         overlay.classList.toggle("active");
         socials.addEventListener("click", () => {
-        menuToggle.click();
-      });
+          menuToggle.click();
+        });
       });
     </script>
   </body>
