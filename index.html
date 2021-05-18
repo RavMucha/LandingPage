@@ -6,312 +6,7 @@
     <link rel="icon" type="image/png" href="./logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landin' page</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
-      body {
-        background-color: #0099ff;
-      }
-      header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 40px 100px;
-        z-index: 1000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      header .logo {
-        color: #fff;
-        text-transform: uppercase;
-        cursor: pointer;
-      }
-      header .logo span {
-        color: #ffc8a3;
-        text-transform: uppercase;
-        cursor: pointer;
-        filter: hue-rotate(0deg);
-        transition: all 2s ease;
-      }
-      header .logo:hover span {
-        filter: hue-rotate(360deg);
-      }
-      .toggle {
-        position: relative;
-        width: 60px;
-        height: 60px;
-        background: url(https://www.flaticon.com/svg/static/icons/svg/808/808531.svg);
-        background-repeat: no-repeat;
-        background-size: 30px;
-        background-position: center;
-        filter: invert(100%);
-        cursor: pointer;
-      }
-      .toggle.active {
-        background: url(https://www.flaticon.com/svg/static/icons/svg/2089/2089733.svg);
-        background-repeat: no-repeat;
-        background-size: 25px;
-        background-position: center;
-        cursor: pointer;
-      }
-      .showcase {
-        position: absolute;
-        right: 0;
-        width: 100%;
-        min-height: 100vh;
-        padding: 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: rgb(0, 4, 15);
-        transition: 0.4s;
-        z-index: 2;
-      }
-      .showcase.active {
-        right: 250px;
-      }
-
-      .showcase video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.8;
-      }
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(187, 53, 0, 0.5);
-        mix-blend-mode: overlay;
-        transition: 0.4s;
-      }
-      .overlay.active {
-        background: rgba(0, 118, 187, 0.9);
-      }
-      .text {
-        position: relative;
-        z-index: 10;
-      }
-
-      .text h2 {
-        font-size: 5em;
-        font-weight: 800;
-        color: #fff;
-        line-height: 1em;
-        text-transform: uppercase;
-      }
-      .text h3 {
-        font-size: 4em;
-        font-weight: 700;
-        color: #fff;
-        line-height: 1em;
-        text-transform: uppercase;
-      }
-      .text p {
-        font-size: 1.1em;
-        color: #fff;
-        line-height: 1.7em;
-        margin: 30px 0;
-        font-weight: 400;
-        max-width: 750px;
-        border-left: #fff 4px solid;
-        border-top: #fff 3px solid;
-        /* border-radius: 1px; */
-        padding-top: 10px;
-        padding-left: 20px;
-        text-align: justify;
-        text-justify: inter-word;
-        transition: 0.3s;
-      }
-      .text p:hover {
-        background-color: rgba(255, 255, 255, 0.05);
-      }
-      #Portf {
-        display: inline-block;
-        position: absolute;
-        z-index: 10;
-        bottom: 40px;
-        font-size: 1em;
-        border-left: #fff 4px solid;
-        border-bottom: #fff 3px solid;
-        /* border-radius: 1px; */
-        padding: 10px 30px;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 500;
-        margin-top: 10px;
-        color: #fff;
-        letter-spacing: 3px;
-        transition: 0.3s;
-      }
-      #Portf:hover {
-        letter-spacing: 7px;
-        padding: 10px 16px;
-      }
-      #Portd {
-        display: inline-block;
-        position: absolute;
-        z-index: 10;
-        bottom: 40px;
-        right: 100px;
-        font-size: 1em;
-        border-right: #fff 4px solid;
-        border-bottom: #fff 3px solid;
-        /* border-radius: 1px; */
-        padding: 10px 30px;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 500;
-        margin-top: 10px;
-        color: #fff;
-        letter-spacing: 3px;
-        transition: 0.3s;
-      }
-      #Portd:hover {
-        letter-spacing: 7px;
-        padding: 10px 12px;
-      }
-
-      .menu {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: #0099ff;
-        width: 250px;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .menu ul {
-        position: relative;
-      }
-      .menu ul li {
-        list-style: none;
-      }
-
-      .menu .list-heading {
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
-        position: absolute;
-        left: -20px;
-        top: 0;
-        font-size: 55px;
-        font-weight: 900;
-        color: #0089e4;
-        transition: filter 0.3s linear;
-        cursor: pointer;
-      }
-
-      .menu .list-heading:hover {
-        filter: drop-shadow(5px 5px 5px #005791) invert(15%);
-      }
-
-      .menu .list-footer {
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
-        position: absolute;
-        left: -20px;
-        bottom: 0;
-        font-size: 55px;
-        font-weight: 900;
-        color: #0089e4;
-        user-select: none;
-      }
-      .menu ul li a {
-        text-decoration: none;
-        font-size: 24px;
-        line-height: 1.5em;
-        transition: filter 0.3s linear;
-        color: #fff;
-      }
-      .menu ul li a:hover {
-        filter: invert(80%) opacity(0.4);
-      }
-
-      .menu ul li a img {
-        border-radius: 30%;
-        width: 18px;
-      }
-      @media (max-width: 990px) {
-        .showcase,
-        .showcase header {
-          padding: 40px;
-        }
-        .text h2 {
-          font-size: 3.5em;
-        }
-        .text h3 {
-          font-size: 2.5em;
-        }
-        .text p {
-          margin-right: 60px;
-        }
-        #Portd {
-          right: 60px;
-        }
-      }
-      @media (max-width: 880px) {
-        .showcase,
-        .showcase header {
-          padding: 40px;
-        }
-        .text h2 {
-          font-size: 3em;
-        }
-        .text h3 {
-          font-size: 2em;
-        }
-        .text p {
-          margin-right: 60px;
-        }
-      }
-      @media (max-width: 560px) {
-        .showcase,
-        .showcase header {
-          padding: 40px;
-        }
-        .text h2 {
-          font-size: 2em;
-        }
-        .text h3 {
-          font-size: 1.5em;
-        }
-        .text p {
-          font-size: 0.9em;
-          margin-left: 0;
-          margin-right: 0;
-        }
-        #Portf {
-          bottom: 82px;
-          left: 40px;
-          font-size: 0.8em;
-          border-right: none;
-          border-bottom: none;
-        }
-        #Portd {
-          bottom: 40px;
-          left: 40px;
-          right: auto;
-          font-size: 0.8em;
-          border-right: none;
-          border-left: #fff 4px solid;
-          border-bottom: #fff 3px solid;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- Done as a training exercise, modified from Traversy Media tutorial from YouTube -->
@@ -320,7 +15,7 @@
         <h2 class="logo">RAV<span>M</span>UCHA</h2>
         <div class="toggle"></div>
       </header>
-      <video src="./assets/sun.mp4" muted loop autoplay></video>
+      <video id="bgVideo" src="./assets/video1.mp4" muted loop autoplay></video>
       <div class="overlay"></div>
       <div class="text">
         <h2>Web development</h2>
@@ -341,7 +36,7 @@
       >
     </section>
     <div class="menu">
-      <h3 class="list-heading">Socials</h3>
+      <h3 class="list-heading" title="Close the sidenav">Close</h3>
       <ul>
         <li>
           <a href="https://www.figma.com/@ravmucha" target="_blank"
@@ -378,13 +73,37 @@
           >
         </li>
       </ul>
-      <h3 class="list-footer">2021</h3>
+      <h3 class="list-footer" title="Change background" onclick="changeVideo()">
+        Flip&#10151;
+      </h3>
     </div>
     <script>
       const menuToggle = document.querySelector(".toggle");
       const showcase = document.querySelector(".showcase");
       const overlay = document.querySelector(".overlay");
       const socials = document.querySelector(".list-heading");
+      var videoPaths = [
+        "./assets/video1.mp4",
+        "./assets/video2.mp4",
+        "./assets/video3.mp4",
+      ];
+
+      var videoCounter = 0;
+      function changeVideo() {
+        videoCounter++;
+        if (videoCounter > 2) {
+          videoCounter = 0;
+        }
+        let video = document
+          .getElementById("bgVideo")
+          .setAttribute("src", videoPaths[videoCounter]);
+        video.load();
+      }
+
+      var flipper = document.querySelector(".list-footer");
+      flipper.addEventListener("click", function () {
+        flipper.classList.toggle("flipper");
+      });
 
       menuToggle.addEventListener("click", () => {
         menuToggle.classList.toggle("active");
