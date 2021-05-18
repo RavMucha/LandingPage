@@ -94,9 +94,8 @@
         if (videoCounter > 2) {
           videoCounter = 0;
         }
-        let video = document
-          .getElementById("bgVideo")
-          .setAttribute("src", videoPaths[videoCounter]);
+        let video = document.getElementById("bgVideo");
+        video.setAttribute("src", videoPaths[videoCounter]);
         video.load();
       }
 
