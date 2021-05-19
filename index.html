@@ -91,7 +91,15 @@
       var videoCounter = 0;
       function changeVideo() {
         videoCounter++;
+        if (videoCounter === 1) {
+          document.querySelector('.showcase').classList.add('sea');
+        }
+        if (videoCounter === 2) {
+          document.querySelector('.showcase').classList.remove('sea');
+          document.querySelector('.showcase').classList.add('forest');
+        }
         if (videoCounter > 2) {
+          document.querySelector('.showcase').classList.remove('forest');
           videoCounter = 0;
         }
         let video = document.getElementById("bgVideo");

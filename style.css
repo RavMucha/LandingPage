@@ -186,6 +186,26 @@ header .logo:hover span {
   justify-content: center;
   align-items: center;
 }
+
+.sea + .menu {
+  filter:hue-rotate(190deg)!important;
+}
+.forest + .menu {
+  filter:hue-rotate(320deg)!important;
+}
+.sea > .overlay {
+  filter:hue-rotate(190deg)!important;
+}
+.sea > .overlay.active {
+  filter:hue-rotate(210deg)!important;
+}
+.forest > .overlay {
+  filter:hue-rotate(120deg)!important;
+}
+.forest > .overlay.active {
+  filter:hue-rotate(320deg)!important;
+}
+
 .menu ul {
   position: relative;
 }
