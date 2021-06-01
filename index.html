@@ -91,13 +91,17 @@
         videoCounter++;
         if (videoCounter === 1) {
           document.querySelector(".showcase").classList.add("sea");
+          document.querySelector("body").classList.add("sea");
         }
         if (videoCounter === 2) {
           document.querySelector(".showcase").classList.remove("sea");
           document.querySelector(".showcase").classList.add("forest");
+          document.querySelector("body").classList.remove("sea");
+          document.querySelector("body").classList.add("forest");
         }
         if (videoCounter > 2) {
           document.querySelector(".showcase").classList.remove("forest");
+          document.querySelector("body").classList.remove("forest");
           videoCounter = 0;
         }
         let video = document.getElementById("bgVideo");

@@ -196,8 +196,14 @@ header .logo:hover span {
 .sea + .menu {
   filter:hue-rotate(190deg)!important;
 }
+body.sea {
+  background-color: #e77000;
+}
 .forest + .menu {
   filter:hue-rotate(320deg)!important;
+}
+body.forest {
+  background-color: #00b48f;
 }
 .sea > .overlay {
   filter:hue-rotate(190deg)!important;
