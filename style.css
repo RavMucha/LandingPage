@@ -28,25 +28,28 @@ header .logo span {
   color: #ffc8a3;
   text-transform: uppercase;
   cursor: pointer;
-  filter: hue-rotate(0deg);
+  -webkit-filter: hue-rotate(0deg);
+          filter: hue-rotate(0deg);
   transition: all 2s ease;
 }
 header .logo:hover span {
-  filter: hue-rotate(360deg);
+  -webkit-filter: hue-rotate(360deg);
+          filter: hue-rotate(360deg);
 }
 .toggle {
   position: relative;
   width: 60px;
   height: 60px;
-  background: url(https://www.flaticon.com/svg/static/icons/svg/808/808531.svg);
+  background: url(./assets/menu.svg);
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: center;
-  filter: invert(100%);
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
   cursor: pointer;
 }
 .toggle.active {
-  background: url(https://www.flaticon.com/svg/static/icons/svg/2089/2089733.svg);
+  background: url(./assets/close.svg);
   background-repeat: no-repeat;
   background-size: 25px;
   background-position: center;
@@ -75,7 +78,8 @@ header .logo:hover span {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   opacity: 0.8;
 }
 .overlay {
@@ -102,7 +106,10 @@ header .logo:hover span {
   color: #fff;
   line-height: 1em;
   text-transform: uppercase;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .text h3 {
   font-size: 4em;
@@ -110,7 +117,10 @@ header .logo:hover span {
   color: #fff;
   line-height: 1em;
   text-transform: uppercase;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .text p {
   font-size: 1.1em;
@@ -126,7 +136,10 @@ header .logo:hover span {
   padding-left: 20px;
   text-align: justify;
   text-justify: inter-word;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .text p:hover {
   opacity: 0.9;
@@ -194,28 +207,34 @@ header .logo:hover span {
 }
 
 .sea + .menu {
-  filter:hue-rotate(190deg)!important;
+  -webkit-filter:hue-rotate(190deg)!important;
+          filter:hue-rotate(190deg)!important;
 }
 body.sea {
   background-color: #e77000;
 }
 .forest + .menu {
-  filter:hue-rotate(320deg)!important;
+  -webkit-filter:hue-rotate(320deg)!important;
+          filter:hue-rotate(320deg)!important;
 }
 body.forest {
   background-color: #00b48f;
 }
 .sea > .overlay {
-  filter:hue-rotate(190deg)!important;
+  -webkit-filter:hue-rotate(190deg)!important;
+          filter:hue-rotate(190deg)!important;
 }
 .sea > .overlay.active {
-  filter:hue-rotate(210deg)!important;
+  -webkit-filter:hue-rotate(210deg)!important;
+          filter:hue-rotate(210deg)!important;
 }
 .forest > .overlay {
-  filter:hue-rotate(120deg)!important;
+  -webkit-filter:hue-rotate(120deg)!important;
+          filter:hue-rotate(120deg)!important;
 }
 .forest > .overlay.active {
-  filter:hue-rotate(320deg)!important;
+  -webkit-filter:hue-rotate(320deg)!important;
+          filter:hue-rotate(320deg)!important;
 }
 
 .menu ul {
@@ -226,38 +245,56 @@ body.forest {
 }
 
 .menu .list-heading {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-text-orientation: mixed;
+          text-orientation: mixed;
   position: absolute;
   left: -20px;
   top: 0;
   font-size: 55px;
   font-weight: 900;
   color: #0089e4;
+  transition: -webkit-filter 0.3s linear;
   transition: filter 0.3s linear;
+  transition: filter 0.3s linear, -webkit-filter 0.3s linear;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .menu .list-heading:hover {
-  filter: drop-shadow(5px 5px 5px #005791) invert(15%);
+  -webkit-filter: drop-shadow(5px 5px 5px #005791) invert(15%);
+          filter: drop-shadow(5px 5px 5px #005791) invert(15%);
 }
 
 .menu .list-footer {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-text-orientation: mixed;
+          text-orientation: mixed;
   position: absolute;
   left: -20px;
   bottom: 0;
   font-size: 55px;
   font-weight: 900;
   color: #0089e4;
+  transition: transform 1s, -webkit-filter 0.3s linear;
   transition: filter 0.3s linear, transform 1s;
+  transition: filter 0.3s linear, transform 1s, -webkit-filter 0.3s linear;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .menu .list-footer:hover {
-  filter: drop-shadow(5px 5px 5px #005791) invert(15%);
+  -webkit-filter: drop-shadow(5px 5px 5px #005791) invert(15%);
+          filter: drop-shadow(5px 5px 5px #005791) invert(15%);
 }
 
 .flipper {
@@ -268,11 +305,14 @@ body.forest {
   text-decoration: none;
   font-size: 24px;
   line-height: 1.5em;
+  transition: -webkit-filter 0.3s linear;
   transition: filter 0.3s linear;
+  transition: filter 0.3s linear, -webkit-filter 0.3s linear;
   color: #fff;
 }
 .menu ul li a:hover {
-  filter: invert(80%) opacity(0.4);
+  -webkit-filter: invert(80%) opacity(0.4);
+          filter: invert(80%) opacity(0.4);
 }
 
 .menu ul li a img {
